@@ -27,6 +27,6 @@ where **$FILE** is the html file, **$PREFIX** is the prefix given by the user an
 
 The NIF validation was made as follows:
 
-                  bin/rdfunit-dev -d $FILEPATHSPOT -s nif -o html
+    bin/rdfunit-dev -d $FILEPATHSPOT -s nif -o html
 
 where **$FILEPATHSPOT** is the output of spotlight.
