@@ -9,20 +9,20 @@ BASH program to map an HTML (parse to plain text) to NIF, validating the results
 
        where:
 
-      -f is the file to be processed
-      -p is the prefix submitted by the user
-      -u is the path of RDFUnit
+                  -**f** is the file to be processed
+                  -**p** is the prefix submitted by the user
+                  -**u** is the path of RDFUnit
 
-      I defined the -u parameter because I have troubles to run RDFUnit outside their main folder. thats it, if I run "RDFUnit-0.8.1/bin/rdfunit-dev -d ...." some errors messages was shown. But if I run "bin/rdfunit-dev -d ..." any error message is shown.
+      The -u parameter was defined because when running RDFUnit outside their main folder it does not work. But if RDFUnit is run it in their main folder it works normally.
 
        The spotlight evaluation was made as follows:
        
-       curl -X POST http://api.dbpedia-spotlight.org/rest/annotate --data "text=$TEXTCONT" --data "prefix=$PREFIX" --data "confidence=0.5" -H "Accept:text/turtle"
+      curl -X POST http://api.dbpedia-spotlight.org/rest/annotate --data "text=$TEXTCONT" --data "prefix=$PREFIX" --data "confidence=0.5" -H "Accept:text/turtle"
 
-       where $FILE is the html file, $PREFIX is the prefix given by the user and $TEXTCONT is the plain text of the Html file
+       where **$FILE** is the html file, **$PREFIX** is the prefix given by the user and **$TEXTCONT** is the plain text of the Html file
 
        The NIF validation was made as follows:
 
-      bin/rdfunit-dev -d $FILEPATHSPOT -s nif -o html
+                  bin/rdfunit-dev -d $FILEPATHSPOT -s nif -o html
 
-       where $FILEPATHSPOT is the output of spotlight.
+       where **$FILEPATHSPOT** is the output of spotlight.
