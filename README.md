@@ -16,8 +16,8 @@ BASH program to map an HTML (parse to plain text) to NIF, validating the results
       I defined the -u parameter because I have troubles to run RDFUnit outside their main folder. thats it, if I run "RDFUnit-0.8.1/bin/rdfunit-dev -d ...." some errors messages was shown. But if I run "bin/rdfunit-dev -d ..." any error message is shown.
 
        The spotlight evaluation was made as follows:
-
-curl -X POST http://api.dbpedia-spotlight.org/rest/annotate --data "text=$TEXTCONT" --data "prefix=$PREFIX" --data "confidence=0.5" -H "Accept:text/turtle"
+       
+       curl -X POST http://api.dbpedia-spotlight.org/rest/annotate --data "text=$TEXTCONT" --data "prefix=$PREFIX" --data "confidence=0.5" -H "Accept:text/turtle"
 
        where $FILE is the html file, $PREFIX is the prefix given by the user and $TEXTCONT is the plain text of the Html file
 
